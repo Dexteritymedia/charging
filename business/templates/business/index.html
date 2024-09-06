@@ -1,0 +1,12 @@
+{% extends 'business/base.html' %}
+
+{% block content %}
+
+{% for station in stations %}
+	{{station.name}}
+	{{station.slug}}
+	<button class="btn btn-neutral">Neutral</button>
+	<a href="{% url 'station-customer' station.name station.slug %}">Go to station</a>
+{% endfor %}
+
+{% endblock content %}

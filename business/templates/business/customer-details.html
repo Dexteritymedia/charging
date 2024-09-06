@@ -1,0 +1,16 @@
+{% extends 'business/base.html' %}
+
+{% block content %}
+<p>Username: {{ customer.user|title }}</p>
+{% if customer.get_full_name %}
+	<p>Name: {{ customer.get_full_name|title }}</p>
+{% else %}
+	<p>Name:{{ customer.first_name|title }}</p>
+{% endif %}
+
+<div>
+{% for activity in activities %}
+	{% if activity.device %}<p>Device charged: {{ activity.device }} {% endif %} Date charged: {{ activity.date|date }}</p>
+{% endfor %}
+</div>
+{% endblock content %}

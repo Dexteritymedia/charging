@@ -1,0 +1,12 @@
+{% extends 'business/base.html' %}
+
+{% block content %}
+<h1>Code--S/Date--E/Date--Usage</h1>
+{% for customer in customer_sub %}
+	<p>
+	{{customer.sub_code}}
+	{{customer.sub_date|date}} - {{customer.expiry_date|date}}
+	{{customer.usage}}
+	</p>
+{% endfor %}
+{% endblock content %}
